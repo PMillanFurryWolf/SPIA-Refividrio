@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuracion>
+  <motor>
+      <!--Datos para ADEMPIERE-->
+    <usuarioA>postgres</usuarioA>
+    <contraA>Pedro123*</contraA>
+    <servidorA>127.0.0.1</servidorA>
+	<dbA>ADempiere</dbA>
+    <puertoA>5432</puertoA>
+    <searchpathA>adempiere</searchpathA>
+  </motor>
+</configuracion>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuracion>
+  <motor>
+      <!--Datos para ADEMPIERE-->
+    <usuarioS>postgres</usuarioS>
+    <contraS>Pedro123*</contraS>
+    <servidorS>127.0.0.1</servidorS>
+	<dbS>SPI</dbS>
+    <puertoS>5432</puertoS>
+    <searchpathS>spi</searchpathS>
+  </motor>
+</configuracion>
