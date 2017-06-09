@@ -6,8 +6,10 @@ Public Class GuardadoDB
             Dim query As String = "insert into conteo(noconteo, color) values(" & conteo & ", '" & color & "')"
             Dim comando As New NpgsqlCommand(query, objConexion.ConectarSPI())
             comando.ExecuteNonQuery()
+            objConexion.CerrarConexion()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "GuardaConteo.GuardarConteo(a,b)")
+            objConexion.CerrarConexion()
         End Try
     End Sub
 
@@ -28,6 +30,7 @@ Public Class GuardadoDB
             Dim queryInsUsuario As String = "insert into usuario(usuario,contrasena,nivel) values('" & usu & "','" & contra & "','" & nivel & "')"
             Dim comando As New NpgsqlCommand(queryInsUsuario, objConexion.ConectarSPI())
             comando.ExecuteNonQuery()
+            objConexion.CerrarConexion()
             FrmAgregarUsuario.Dispose()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "GuardaEquipo.GuardarUsuario(a,b,c)")
@@ -39,9 +42,11 @@ Public Class GuardadoDB
             Dim queryInsZona As String = "insert into zonas(nombrezona, id_m_locator)values('" & nombreZona & "'," & id_m_locator & ")"
             Dim comando As New NpgsqlCommand(queryInsZona, objConexion.ConectarSPI())
             comando.ExecuteNonQuery()
+            objConexion.CerrarConexion()
             FrmAgregarZona.Dispose()
         Catch ex As Exception
-            MsgBox(ex.Message, vbCritical, "GuardadiDb.GuardarZona(arg, arg)")
+            MsgBox(ex.Message, vbCritical, "GuardadoDB.GuardarZona(arg, arg)")
+            objConexion.CerrarConexion()
         End Try
     End Sub
 End Class

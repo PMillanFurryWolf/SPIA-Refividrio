@@ -1,7 +1,7 @@
 ﻿Imports Npgsql
 Public Class Sincroniza
     Public Sub Sincronizar()
-        SincronizarM_Locator()
+
     End Sub
     Private Sub SincronizarAd_client()
         Dim objConexionADP As New ConexionDB
@@ -116,35 +116,6 @@ Public Class Sincroniza
                 End Try
             End While
             MsgBox("FinMwarehouse")
-        Catch ex As Exception
-            MsgBox(ex.Message, vbCritical, "Sincroniza.SincronizarM_warehouse()")
-        End Try
-    End Sub
-
-    Public Sub SincronizarM_Locator()
-        Dim objConexionADP As New ConexionDB
-        Dim objConexionSPIA As New ConexionDB
-        Try
-            Dim queryConsulta As String = "select * from m_locator"
-            Dim lector As NpgsqlDataReader
-            Dim comandoADP As New NpgsqlCommand()
-            comandoADP.CommandText = queryConsulta
-            comandoADP.Connection = objConexionADP.ConectarADP()
-            lector = comandoADP.ExecuteReader()
-            Dim queryInsert As String = ""
-            Dim comandoSPI As New NpgsqlCommand()
-            comandoSPI.Connection = objConexionSPIA.ConectarSPI()
-            While lector.Read()
-                Try
-                    queryInsert = "INSERT INTO m_locator_ubicacion(m_locator_id, codigoalmacen)
-	                VALUES ('" & lector("m_locator_id") & "', '" & lector("value") & "');"
-                    comandoSPI.CommandText = queryInsert
-                    comandoSPI.ExecuteNonQuery()
-                Catch ex As Exception
-                    MsgBox(ex.Message, vbCritical, "Sincroniza.SincronizarM_Locator()")
-                End Try
-            End While
-            MsgBox("FinMLocator")
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "Sincroniza.SincronizarM_warehouse()")
         End Try

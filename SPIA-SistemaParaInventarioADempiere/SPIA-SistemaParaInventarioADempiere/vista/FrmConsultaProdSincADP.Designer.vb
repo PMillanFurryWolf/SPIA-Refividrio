@@ -86,11 +86,11 @@ Partial Class FrmConsultaProdSincADP
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(129, 34)
+        Me.Label1.Location = New System.Drawing.Point(88, 38)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(141, 13)
+        Me.Label1.Size = New System.Drawing.Size(182, 13)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Clave o nombre de producto"
+        Me.Label1.Text = "Clave,  nombre de producto o unidad"
         '
         'BtnCopiar
         '

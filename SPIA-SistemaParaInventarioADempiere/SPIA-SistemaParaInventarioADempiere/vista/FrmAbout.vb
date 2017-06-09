@@ -13,7 +13,7 @@
         contador = contador + 1
         If contador = 7 Then
             contador = 1
-            MsgBox("🐺Moving on and getting over.🐺", vbInformation, "🐺Hidden message from a furry wolf.🐺")
+            MsgBox("Moving on and getting over: 🐺AnisosLupus.🐺", vbInformation, "🐺Hidden message from a furry wolf.🐺")
         End If
     End Sub
 End Class

@@ -51,23 +51,26 @@ Partial Class FrmPrincipal
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.picProdAdempiere = New System.Windows.Forms.PictureBox()
         Me.picProductosAlmacenados = New System.Windows.Forms.PictureBox()
         Me.picInventario = New System.Windows.Forms.PictureBox()
         Me.picZonas = New System.Windows.Forms.PictureBox()
         Me.picAsignarConteo = New System.Windows.Forms.PictureBox()
         Me.picConteo = New System.Windows.Forms.PictureBox()
         Me.picEquipo = New System.Windows.Forms.PictureBox()
-        Me.picProdAdempiere = New System.Windows.Forms.PictureBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.StatusStrip2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picProdAdempiere, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picProductosAlmacenados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picInventario, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picZonas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picAsignarConteo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picConteo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picEquipo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picProdAdempiere, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatusStrip2
@@ -76,7 +79,7 @@ Partial Class FrmPrincipal
         Me.StatusStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.txtoolUsuario, Me.txttoolNivel, Me.txttoolEquipo, Me.txtToolTime})
         Me.StatusStrip2.Location = New System.Drawing.Point(0, 528)
         Me.StatusStrip2.Name = "StatusStrip2"
-        Me.StatusStrip2.Size = New System.Drawing.Size(497, 22)
+        Me.StatusStrip2.Size = New System.Drawing.Size(485, 22)
         Me.StatusStrip2.Stretch = False
         Me.StatusStrip2.TabIndex = 1
         Me.StatusStrip2.TabStop = True
@@ -111,7 +114,7 @@ Partial Class FrmPrincipal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.GestiónToolStripMenuItem, Me.TareaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(497, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(485, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -145,7 +148,7 @@ Partial Class FrmPrincipal
         '
         Me.AgregarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarUsuariosToolStripMenuItem, Me.AgregarUnEquipoToolStripMenuItem, Me.AgregarConteosToolStripMenuItem, Me.AgregarUnaZonaToolStripMenuItem})
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
         '
         'AgregarUsuariosToolStripMenuItem
@@ -176,7 +179,7 @@ Partial Class FrmPrincipal
         '
         Me.BuscarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EquipoToolStripMenuItem, Me.ConteoToolStripMenuItem})
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'EquipoToolStripMenuItem
@@ -202,7 +205,7 @@ Partial Class FrmPrincipal
         '
         Me.SincronizaciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SincronziarConADempiereToolStripMenuItem, Me.SincronizarInformaciónDeInventarioAAdempiereToolStripMenuItem})
         Me.SincronizaciónToolStripMenuItem.Name = "SincronizaciónToolStripMenuItem"
-        Me.SincronizaciónToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.SincronizaciónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.SincronizaciónToolStripMenuItem.Text = "Sincronización"
         '
         'SincronziarConADempiereToolStripMenuItem
@@ -265,16 +268,54 @@ Partial Class FrmPrincipal
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(239, 311)
+        Me.Label6.Location = New System.Drawing.Point(133, 453)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(116, 13)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Productos escaneados"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(15, 458)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(108, 13)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Productos Adempiere"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(380, 142)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(66, 13)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Conteo Final"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SPIA_SistemaParaInventarioADempiere.My.Resources.Resources.conteoFinal
+        Me.PictureBox1.Location = New System.Drawing.Point(361, 29)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(112, 101)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 17
+        Me.PictureBox1.TabStop = False
+        '
+        'picProdAdempiere
+        '
+        Me.picProdAdempiere.Image = Global.SPIA_SistemaParaInventarioADempiere.My.Resources.Resources.ProductosAdempiere
+        Me.picProdAdempiere.Location = New System.Drawing.Point(12, 340)
+        Me.picProdAdempiere.Name = "picProdAdempiere"
+        Me.picProdAdempiere.Size = New System.Drawing.Size(118, 103)
+        Me.picProdAdempiere.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picProdAdempiere.TabIndex = 15
+        Me.picProdAdempiere.TabStop = False
+        '
         'picProductosAlmacenados
         '
         Me.picProductosAlmacenados.Image = Global.SPIA_SistemaParaInventarioADempiere.My.Resources.Resources.productosalmacenados
-        Me.picProductosAlmacenados.Location = New System.Drawing.Point(242, 193)
+        Me.picProductosAlmacenados.Location = New System.Drawing.Point(136, 340)
         Me.picProductosAlmacenados.Name = "picProductosAlmacenados"
         Me.picProductosAlmacenados.Size = New System.Drawing.Size(110, 101)
         Me.picProductosAlmacenados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -331,31 +372,14 @@ Partial Class FrmPrincipal
         Me.picEquipo.TabIndex = 3
         Me.picEquipo.TabStop = False
         '
-        'picProdAdempiere
-        '
-        Me.picProdAdempiere.Image = Global.SPIA_SistemaParaInventarioADempiere.My.Resources.Resources.ProductosAdempiere
-        Me.picProdAdempiere.Location = New System.Drawing.Point(355, 27)
-        Me.picProdAdempiere.Name = "picProdAdempiere"
-        Me.picProdAdempiere.Size = New System.Drawing.Size(118, 103)
-        Me.picProdAdempiere.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picProdAdempiere.TabIndex = 15
-        Me.picProdAdempiere.TabStop = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(358, 145)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(108, 13)
-        Me.Label7.TabIndex = 16
-        Me.Label7.Text = "Productos Adempiere"
-        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(497, 550)
+        Me.ClientSize = New System.Drawing.Size(485, 550)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.picProdAdempiere)
         Me.Controls.Add(Me.Label6)
@@ -381,13 +405,14 @@ Partial Class FrmPrincipal
         Me.StatusStrip2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picProdAdempiere, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picProductosAlmacenados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picInventario, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picZonas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picAsignarConteo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picConteo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picEquipo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picProdAdempiere, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -428,4 +453,6 @@ Partial Class FrmPrincipal
     Friend WithEvents AgregarUsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgregarUnaZonaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label8 As Label
 End Class

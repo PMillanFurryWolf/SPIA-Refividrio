@@ -70,6 +70,8 @@
     End Sub
 
     Private Sub AgregarUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarUsuariosToolStripMenuItem.Click
+        Dim obj As New ConsultasDataView
+        obj.ConsultarUsuario()
         FrmAgregarUsuario.Show()
     End Sub
 

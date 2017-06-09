@@ -15,7 +15,7 @@ Public Class FrmAgregarEquipo
         While lector.Read()
             cmbUsuario.Items.Add(lector("usuario"))
         End While
-
+        lector.Close()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -39,6 +39,8 @@ Public Class FrmAgregarEquipo
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAgregarUsuario.Click
         FrmAgregarUsuario.Show()
+        Dim obj As New ConsultasDataView
+        obj.ConsultarUsuario()
     End Sub
 
     Private Sub cmbUsuario_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbUsuario.SelectedIndexChanged
@@ -56,6 +58,7 @@ Public Class FrmAgregarEquipo
             If lector.Read Then
                 valor = lector("id_usuario")
             End If
+            lector.Close()
             Return valor
         Catch ex As Exception
             MsgBox(ex.Message())

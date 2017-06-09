@@ -80,11 +80,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="nucleo\ConexionDB.vb" />
-    <Compile Include="nucleo\ConsultasDataView.vb" />
-    <Compile Include="nucleo\GuardadoDB.vb" />
-    <Compile Include="nucleo\Sincroniza.vb" />
-    <Compile Include="nucleo\ValidaUsuario.vb" />
+    <Compile Include="modelo\Actualizar.vb" />
+    <Compile Include="modelo\ConexionDB.vb" />
+    <Compile Include="modelo\ConsultasDataView.vb" />
+    <Compile Include="modelo\Eliminar.vb" />
+    <Compile Include="modelo\GuardadoDB.vb" />
+    <Compile Include="modelo\Sincroniza.vb" />
+    <Compile Include="modelo\ValidaUsuario.vb" />
+    <Compile Include="vista.equipo\FrmEquipo.Designer.vb">
+      <DependentUpon>FrmEquipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vista.equipo\FrmEquipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="vista\FrmAbout.Designer.vb">
       <DependentUpon>FrmAbout.vb</DependentUpon>
     </Compile>
@@ -170,6 +178,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="vista.equipo\FrmEquipo.resx">
+      <DependentUpon>FrmEquipo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vista\FrmAbout.resx">
       <DependentUpon>FrmAbout.vb</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +265,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\spia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conteoFinal.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -1,6 +1,6 @@
 ﻿Public Class FrmLogin
     Dim obja As New ValidaUsuario
-
+    Dim objConn As New ConexionDB
     Private Sub btnAcceder_Click(sender As Object, e As EventArgs) Handles btnAcceder.Click
         If txtUsuario.Text.Trim = "" Or txtContrasena.Text.Trim = "" Then
             MsgBox("No dejar campos vacíos", vbExclamation, "Campos vacíos")

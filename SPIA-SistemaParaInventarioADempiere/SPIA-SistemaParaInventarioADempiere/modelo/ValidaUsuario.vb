@@ -1,7 +1,5 @@
 ﻿Imports Npgsql
-
 Public Class ValidaUsuario
-
     Dim reader As NpgsqlDataReader
     Dim objConexion As New ConexionDB
     Public Sub ValidarUsuario(usuario As String, contrasena As String)
@@ -11,16 +9,19 @@ Public Class ValidaUsuario
             cmd.Parameters.Add("@pass", SqlDbType.VarChar, 32).Value = contrasena
             reader = cmd.ExecuteReader()
             If reader.Read Then
-                FrmLogin.Hide()
                 If reader("nivel") = "administrador" Then
+                    FrmLogin.Hide()
                     FrmPrincipal.txttoolNivel.Text = reader("nivel")
                     FrmPrincipal.txtoolUsuario.Text = reader("usuario")
                     FrmPrincipal.Show()
                     objConexion.CerrarConexion()
+                    reader.Close()
                 ElseIf reader("nivel") = "equipo" Then
                     MsgBox("Módulo de equipos en desarrollo")
+                    FrmLogin.Hide()
+                    FrmEquipo.Show()
                     objConexion.CerrarConexion()
-                    FrmLogin.Show()
+                    reader.Close()
                 End If
                 FrmPrincipal.txttoolEquipo.Text = Environment.MachineName
                 FrmPrincipal.txtToolTime.Text = DateTime.Now()
@@ -29,10 +30,11 @@ Public Class ValidaUsuario
                 FrmLogin.txtUsuario.Text = ""
                 FrmLogin.txtContrasena.Text = ""
                 objConexion.CerrarConexion()
+                reader.Close()
             End If
-
         Catch ex As Exception
-            MsgBox(ex.Message, vbCritical, "ValidaUsuario.ValidarUsuario(a,a)")
+            reader.Close()
+            MsgBox(ex.Message, vbCritical, "ValidaUsuario.ValidarUsuario1(a,a)")
         End Try
     End Sub
 End Class
