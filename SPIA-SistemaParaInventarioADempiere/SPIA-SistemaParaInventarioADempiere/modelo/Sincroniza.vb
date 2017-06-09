@@ -1,7 +1,7 @@
 ﻿Imports Npgsql
 Public Class Sincroniza
     Public Sub Sincronizar()
-
+        SincronizarM_warehouse()
     End Sub
     Private Sub SincronizarAd_client()
         Dim objConexionADP As New ConexionDB

@@ -24,9 +24,9 @@ Partial Class FrmConsultarConteo
     Private Sub InitializeComponent()
         Me.tcConsultaConteo = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnAgregarConteo = New System.Windows.Forms.Button()
         Me.dtgvConteo = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnAgregarConteo = New System.Windows.Forms.Button()
         Me.tcConsultaConteo.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.dtgvConteo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,26 +55,6 @@ Partial Class FrmConsultarConteo
         Me.TabPage1.Text = "Conteos"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'dtgvConteo
-        '
-        Me.dtgvConteo.AllowUserToAddRows = False
-        Me.dtgvConteo.AllowUserToDeleteRows = False
-        Me.dtgvConteo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgvConteo.Location = New System.Drawing.Point(3, 0)
-        Me.dtgvConteo.Name = "dtgvConteo"
-        Me.dtgvConteo.Size = New System.Drawing.Size(400, 216)
-        Me.dtgvConteo.TabIndex = 0
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(642, 225)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "selección"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
         'btnAgregarConteo
         '
         Me.btnAgregarConteo.Location = New System.Drawing.Point(149, 232)
@@ -84,12 +64,35 @@ Partial Class FrmConsultarConteo
         Me.btnAgregarConteo.Text = "Agregar conteo"
         Me.btnAgregarConteo.UseVisualStyleBackColor = True
         '
+        'dtgvConteo
+        '
+        Me.dtgvConteo.AllowUserToAddRows = False
+        Me.dtgvConteo.AllowUserToDeleteRows = False
+        Me.dtgvConteo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgvConteo.Location = New System.Drawing.Point(3, 0)
+        Me.dtgvConteo.Name = "dtgvConteo"
+        Me.dtgvConteo.ReadOnly = True
+        Me.dtgvConteo.Size = New System.Drawing.Size(400, 216)
+        Me.dtgvConteo.TabIndex = 0
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(408, 281)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "selección"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
         'FrmConsultarConteo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(436, 331)
         Me.Controls.Add(Me.tcConsultaConteo)
+        Me.MaximizeBox = False
         Me.Name = "FrmConsultarConteo"
         Me.Text = "FrmConsultarConteo"
         Me.tcConsultaConteo.ResumeLayout(False)

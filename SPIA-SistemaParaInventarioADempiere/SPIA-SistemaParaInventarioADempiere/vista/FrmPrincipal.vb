@@ -1,13 +1,9 @@
 ﻿Public Class FrmPrincipal
 
-
+    Dim obj As New ConsultasDataView
     Private Sub AgregarUnEquipoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarUnEquipoToolStripMenuItem.Click
         Dim obj As New FrmAgregarEquipo
         obj.Show()
-    End Sub
-
-    Private Sub EquipoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EquipoToolStripMenuItem.Click
-        FrmBuscarEquipo.Show()
     End Sub
 
     Private Sub CerrarSesiónToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
@@ -33,30 +29,31 @@
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles picEquipo.Click
-        Dim obj As New ConsultasDataView
         obj.ConsultarEquipo("")
         FrmConsultarEquipo.Show()
 
     End Sub
 
     Private Sub picConteo_Click(sender As Object, e As EventArgs) Handles picConteo.Click
-        Dim obj As New ConsultasDataView
         obj.ConsultarConteo()
         FrmConsultarConteo.Show()
     End Sub
 
     Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles picAsignarConteo.Click
-        MsgBox("asignacionconteo")
+        obj.ConsultarAsignacion()
+        FrmAsignacionConteo.Show()
+        FrmAsignacionConteo.TabAsignacion.SelectedIndex = 1
     End Sub
 
     Private Sub picZonas_Click(sender As Object, e As EventArgs) Handles picZonas.Click
-        Dim obj As New ConsultasDataView
         obj.ConsultarZonas()
         FrmConsultarZonas.Show()
     End Sub
 
     Private Sub picInventario_Click(sender As Object, e As EventArgs) Handles picInventario.Click
-        MsgBox("inventario")
+        FrmInventario.TabInventario.SelectedIndex = 1
+        obj.ConsultarInventarios()
+        FrmInventario.Show()
     End Sub
 
     Private Sub picProductosAlmacenados_Click(sender As Object, e As EventArgs) Handles picProductosAlmacenados.Click
@@ -65,12 +62,10 @@
 
     Private Sub picProdAdempiere_Click(sender As Object, e As EventArgs) Handles picProdAdempiere.Click
         FrmConsultaProdSincADP.Show()
-        Dim obj As New ConsultasDataView
         obj.ConsultarProductos()
     End Sub
 
     Private Sub AgregarUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarUsuariosToolStripMenuItem.Click
-        Dim obj As New ConsultasDataView
         obj.ConsultarUsuario()
         FrmAgregarUsuario.Show()
     End Sub

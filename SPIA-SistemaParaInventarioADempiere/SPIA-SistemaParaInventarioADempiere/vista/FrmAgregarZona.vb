@@ -4,53 +4,41 @@ Public Class FrmAgregarZona
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        LlenarCombo()
-    End Sub
-    Public Sub LlenarCombo()
-        Dim objConexion As New ConexionDB
-        Try
-            Dim comando As New NpgsqlCommand("select * from m_locator_ubicacion", objConexion.ConectarSPI())
-            Dim lector As NpgsqlDataReader
-            lector = comando.ExecuteReader
-            While lector.Read()
-                CmbUbicacion.Items.Add(lector("codigoalmacen"))
-            End While
-
-        Catch ex As Exception
-            MsgBox(ex.Message, vbCritical, "FrmAgregarZona.LlenarCombo()")
-        End Try
+        TxtUbicacion.Enabled = False
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If TxtNombreZona.Text.Trim = "" Or CmbUbicacion.SelectedIndex + 1 = 0 Then
+
+        Dim objG As New GuardadoDB()
+        If TxtUbicacion.Text.Trim = "" Or TxtNombreZona.Text.Trim = "" Then
             MsgBox("Favor de no dejar campos vacíos", vbExclamation, "Atención")
         Else
-            Dim objG As New GuardadoDB()
-            objG.GuardarZona(TxtNombreZona.Text, ActualizarCombo())
+            objG.GuardarZona(TxtNombreZona.Text, TxtUbicacion.Text)
             FrmConsultarZonas.dtgvZonas.Refresh()
             Dim objCon As New ConsultasDataView
             objCon.ConsultarZonas()
-
         End If
     End Sub
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Dispose()
     End Sub
 
-    Public Sub CmbUbicacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbUbicacion.SelectedIndexChanged
-        ActualizarCombo()
+    Private Sub TxtBuscadorAlmacen_KeyPress(ByVal sender As Object,
+             ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtBuscadorAlmacen.KeyPress
+        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            Dim obj As New ConsultasDataView
+            obj.BuscarAlmacen(TxtBuscadorAlmacen.Text.ToUpper)
+        End If
+
     End Sub
 
-    Friend Function ActualizarCombo() As Integer
-        Dim objConn As New ConexionDB
-        Dim valor As Integer = 0
-        Dim queryCombo As String = "select id_m_locator_ubicacion from m_locator_ubicacion where codigoalmacen='" & CmbUbicacion.Text & "'"
-        Dim comando As New NpgsqlCommand(queryCombo, objConn.ConectarSPI())
-        Dim lector As NpgsqlDataReader
-        lector = comando.ExecuteReader()
-        If lector.Read() Then
-            valor = lector("id_m_locator_ubicacion")
-        End If
-        Return valor
-    End Function
+    Private Sub DtgvAlmacen_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgvAlmacen.CellDoubleClick
+        Dim Fila As Integer = e.RowIndex
+        Dim Columna As Integer = e.ColumnIndex
+        TabZona.SelectedIndex = 0
+        Try
+            TxtUbicacion.Text = DtgvAlmacen.Rows(Fila).Cells(Columna).Value.ToString()
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

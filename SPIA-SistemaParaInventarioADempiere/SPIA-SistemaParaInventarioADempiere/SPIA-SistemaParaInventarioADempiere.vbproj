@@ -48,7 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Npgsql">
-      <HintPath>..\RespaldoSpia\Npgsql-2.2.3-net45\Npgsql.dll</HintPath>
+      <HintPath>..\RespaldoSpia\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -123,10 +123,10 @@
     <Compile Include="vista\FrmAgregarZona.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vista\FrmBuscarEquipo.Designer.vb">
-      <DependentUpon>FrmBuscarEquipo.vb</DependentUpon>
+    <Compile Include="vista\FrmAsignacionConteo.Designer.vb">
+      <DependentUpon>FrmAsignacionConteo.vb</DependentUpon>
     </Compile>
-    <Compile Include="vista\FrmBuscarEquipo.vb">
+    <Compile Include="vista\FrmAsignacionConteo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="vista\FrmConsultaProdSincADP.Designer.vb">
@@ -151,6 +151,12 @@
       <DependentUpon>FrmConsultarZonas.vb</DependentUpon>
     </Compile>
     <Compile Include="vista\FrmConsultarZonas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\FrmInventario.Designer.vb">
+      <DependentUpon>FrmInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="vista\FrmInventario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="vista\FrmLogin.vb">
@@ -196,8 +202,8 @@
     <EmbeddedResource Include="vista\FrmAgregarZona.resx">
       <DependentUpon>FrmAgregarZona.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vista\FrmBuscarEquipo.resx">
-      <DependentUpon>FrmBuscarEquipo.vb</DependentUpon>
+    <EmbeddedResource Include="vista\FrmAsignacionConteo.resx">
+      <DependentUpon>FrmAsignacionConteo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\FrmConsultaProdSincADP.resx">
       <DependentUpon>FrmConsultaProdSincADP.vb</DependentUpon>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vista\FrmConsultarZonas.resx">
       <DependentUpon>FrmConsultarZonas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\FrmInventario.resx">
+      <DependentUpon>FrmInventario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
