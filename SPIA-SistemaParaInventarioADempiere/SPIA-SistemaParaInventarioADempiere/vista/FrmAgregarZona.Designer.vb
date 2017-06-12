@@ -34,6 +34,7 @@ Partial Class FrmAgregarZona
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtBuscadorAlmacen = New System.Windows.Forms.TextBox()
         Me.DtgvAlmacen = New System.Windows.Forms.DataGridView()
+        Me.BtnUbc = New System.Windows.Forms.Button()
         Me.TabZona.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -63,7 +64,7 @@ Partial Class FrmAgregarZona
         '
         Me.TxtNombreZona.Location = New System.Drawing.Point(136, 23)
         Me.TxtNombreZona.Name = "TxtNombreZona"
-        Me.TxtNombreZona.Size = New System.Drawing.Size(181, 20)
+        Me.TxtNombreZona.Size = New System.Drawing.Size(223, 20)
         Me.TxtNombreZona.TabIndex = 3
         '
         'btnAceptar
@@ -99,10 +100,12 @@ Partial Class FrmAgregarZona
         Me.TabZona.Name = "TabZona"
         Me.TabZona.SelectedIndex = 0
         Me.TabZona.Size = New System.Drawing.Size(444, 239)
+        Me.TabZona.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.TabZona.TabIndex = 10
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BtnUbc)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.TxtUbicacion)
@@ -157,6 +160,15 @@ Partial Class FrmAgregarZona
         Me.DtgvAlmacen.Size = New System.Drawing.Size(424, 163)
         Me.DtgvAlmacen.TabIndex = 0
         '
+        'BtnUbc
+        '
+        Me.BtnUbc.Location = New System.Drawing.Point(323, 77)
+        Me.BtnUbc.Name = "BtnUbc"
+        Me.BtnUbc.Size = New System.Drawing.Size(36, 21)
+        Me.BtnUbc.TabIndex = 9
+        Me.BtnUbc.Text = "..."
+        Me.BtnUbc.UseVisualStyleBackColor = True
+        '
         'FrmAgregarZona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -187,4 +199,5 @@ Partial Class FrmAgregarZona
     Friend WithEvents DtgvAlmacen As DataGridView
     Friend WithEvents Label3 As Label
     Friend WithEvents TxtBuscadorAlmacen As TextBox
+    Friend WithEvents BtnUbc As Button
 End Class

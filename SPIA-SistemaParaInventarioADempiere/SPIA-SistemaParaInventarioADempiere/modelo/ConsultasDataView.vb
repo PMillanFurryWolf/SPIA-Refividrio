@@ -66,7 +66,7 @@ Public Class ConsultasDataView
 
         Try
             Dim buscarQuery As String = "
-            select zona, m_warehouse_almacen.codigoalmancen, m_warehouse_almacen.nombrealmacen from zonas inner join m_warehouse_almacen on zonas.id_m_warehouse_almacen=m_warehouse_almacen.id_m_warehouse_almacen"
+            select zona, m_warehouse_almacen.nombrealmacen, m_warehouse_almacen.codigoalmancen from zonas inner join m_warehouse_almacen on zonas.id_m_warehouse_almacen=m_warehouse_almacen.id_m_warehouse_almacen"
             Dim dtDatos As New DataTable
             Dim mdaDatos As New NpgsqlDataAdapter(buscarQuery, objConexion.ConectarSPI())
             mdaDatos.Fill(dtDatos)
@@ -84,6 +84,7 @@ Public Class ConsultasDataView
             Dim mdaDatos As New NpgsqlDataAdapter(buscarQuery, objConexion.ConectarSPI())
             mdaDatos.Fill(dtDatos)
             FrmAgregarZona.DtgvAlmacen.DataSource = dtDatos
+            FrmConsultarZonas.DtgvAlmacen.DataSource = dtDatos
             objConexion.CerrarConexion()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "ConsultasDataView.BuscarAlmacen(arg)")
@@ -97,6 +98,7 @@ Public Class ConsultasDataView
             Dim mdaDatos As New NpgsqlDataAdapter(buscarQuery, objConexion.ConectarSPI())
             mdaDatos.Fill(dtDatos)
             FrmAgregarZona.DtgvAlmacen.DataSource = dtDatos
+            FrmConsultarZonas.DtgvAlmacen.DataSource = dtDatos
             objConexion.CerrarConexion()
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "ConsultasDataView.ConsultarAlmacen()")

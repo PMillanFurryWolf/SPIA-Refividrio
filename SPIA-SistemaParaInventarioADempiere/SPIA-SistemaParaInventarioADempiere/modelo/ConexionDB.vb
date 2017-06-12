@@ -37,6 +37,7 @@ Public Class ConexionDB
                 pgConnection.ConnectionString = pgConnectionString.ConnectionString
                 Try
                     pgConnection.Open()
+                    Console.WriteLine("!!!!!Conexión Abierta con SPI!!!!!")
                 Catch ex As Exception
                 End Try
                 Return pgConnection
@@ -80,7 +81,7 @@ Public Class ConexionDB
                 pgConnectionString.Host = server
                 pgConnection.ConnectionString = pgConnectionString.ConnectionString
                 pgConnection.Open()
-                'MsgBox("conexion abierta ADP")
+                Console.WriteLine("!!Conexión Abierta con ADP!!")
                 Return pgConnection
             End While
         Catch ex As Exception
@@ -90,6 +91,6 @@ Public Class ConexionDB
     End Function
     Public Sub CerrarConexion()
         pgConnection.Close()
-        'MsgBox("ConexionCerrada", vbExclamation, "ConexionDB.CerrarConexion()")
+        Console.WriteLine("¡¡¡¡¡Conexión cerrada!!!!!")
     End Sub
 End Class

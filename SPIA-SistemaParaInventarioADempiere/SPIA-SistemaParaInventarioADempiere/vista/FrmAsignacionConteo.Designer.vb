@@ -40,10 +40,24 @@ Partial Class FrmAsignacionConteo
         Me.BtnAsignar = New System.Windows.Forms.Button()
         Me.DtgvAsigConteo = New System.Windows.Forms.DataGridView()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.lblMaster = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.CmbInvenUP = New System.Windows.Forms.ComboBox()
+        Me.CmbConteoUp = New System.Windows.Forms.ComboBox()
+        Me.FechaAsigUP = New System.Windows.Forms.DateTimePicker()
+        Me.BtnEliminar = New System.Windows.Forms.Button()
+        Me.BtnActualizar = New System.Windows.Forms.Button()
+        Me.CmbZonaUp = New System.Windows.Forms.ComboBox()
+        Me.CmbEqUpd = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.TabAsignacion.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DtgvAsigConteo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabAsignacion
@@ -221,12 +235,140 @@ Partial Class FrmAsignacionConteo
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.lblMaster)
+        Me.TabPage3.Controls.Add(Me.Label6)
+        Me.TabPage3.Controls.Add(Me.Label7)
+        Me.TabPage3.Controls.Add(Me.Label8)
+        Me.TabPage3.Controls.Add(Me.CmbInvenUP)
+        Me.TabPage3.Controls.Add(Me.CmbConteoUp)
+        Me.TabPage3.Controls.Add(Me.FechaAsigUP)
+        Me.TabPage3.Controls.Add(Me.BtnEliminar)
+        Me.TabPage3.Controls.Add(Me.BtnActualizar)
+        Me.TabPage3.Controls.Add(Me.CmbZonaUp)
+        Me.TabPage3.Controls.Add(Me.CmbEqUpd)
+        Me.TabPage3.Controls.Add(Me.Label9)
+        Me.TabPage3.Controls.Add(Me.Label10)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(786, 367)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Selección"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'lblMaster
+        '
+        Me.lblMaster.AutoSize = True
+        Me.lblMaster.Location = New System.Drawing.Point(110, 248)
+        Me.lblMaster.Name = "lblMaster"
+        Me.lblMaster.Size = New System.Drawing.Size(39, 13)
+        Me.lblMaster.TabIndex = 29
+        Me.lblMaster.Text = "equipo"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(212, 146)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(106, 13)
+        Me.Label6.TabIndex = 28
+        Me.Label6.Text = "Fecha de asignación"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(405, 89)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(54, 13)
+        Me.Label7.TabIndex = 27
+        Me.Label7.Text = "Inventario"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(405, 45)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(41, 13)
+        Me.Label8.TabIndex = 26
+        Me.Label8.Text = "Conteo"
+        '
+        'CmbInvenUP
+        '
+        Me.CmbInvenUP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbInvenUP.FormattingEnabled = True
+        Me.CmbInvenUP.Location = New System.Drawing.Point(467, 84)
+        Me.CmbInvenUP.Name = "CmbInvenUP"
+        Me.CmbInvenUP.Size = New System.Drawing.Size(200, 21)
+        Me.CmbInvenUP.TabIndex = 25
+        '
+        'CmbConteoUp
+        '
+        Me.CmbConteoUp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbConteoUp.FormattingEnabled = True
+        Me.CmbConteoUp.Location = New System.Drawing.Point(467, 37)
+        Me.CmbConteoUp.Name = "CmbConteoUp"
+        Me.CmbConteoUp.Size = New System.Drawing.Size(200, 21)
+        Me.CmbConteoUp.TabIndex = 24
+        '
+        'FechaAsigUP
+        '
+        Me.FechaAsigUP.Location = New System.Drawing.Point(347, 140)
+        Me.FechaAsigUP.Name = "FechaAsigUP"
+        Me.FechaAsigUP.Size = New System.Drawing.Size(200, 20)
+        Me.FechaAsigUP.TabIndex = 23
+        '
+        'BtnEliminar
+        '
+        Me.BtnEliminar.Location = New System.Drawing.Point(418, 262)
+        Me.BtnEliminar.Name = "BtnEliminar"
+        Me.BtnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnEliminar.TabIndex = 22
+        Me.BtnEliminar.Text = "Eliminar"
+        Me.BtnEliminar.UseVisualStyleBackColor = True
+        '
+        'BtnActualizar
+        '
+        Me.BtnActualizar.Location = New System.Drawing.Point(309, 262)
+        Me.BtnActualizar.Name = "BtnActualizar"
+        Me.BtnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnActualizar.TabIndex = 21
+        Me.BtnActualizar.Text = "Actualizar"
+        Me.BtnActualizar.UseVisualStyleBackColor = True
+        '
+        'CmbZonaUp
+        '
+        Me.CmbZonaUp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbZonaUp.FormattingEnabled = True
+        Me.CmbZonaUp.Location = New System.Drawing.Point(184, 84)
+        Me.CmbZonaUp.Name = "CmbZonaUp"
+        Me.CmbZonaUp.Size = New System.Drawing.Size(200, 21)
+        Me.CmbZonaUp.TabIndex = 20
+        '
+        'CmbEqUpd
+        '
+        Me.CmbEqUpd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbEqUpd.FormattingEnabled = True
+        Me.CmbEqUpd.Location = New System.Drawing.Point(184, 37)
+        Me.CmbEqUpd.Name = "CmbEqUpd"
+        Me.CmbEqUpd.Size = New System.Drawing.Size(200, 21)
+        Me.CmbEqUpd.TabIndex = 19
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(110, 84)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(32, 13)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "Zona"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(110, 40)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(40, 13)
+        Me.Label10.TabIndex = 17
+        Me.Label10.Text = "Equipo"
         '
         'FrmAsignacionConteo
         '
@@ -241,6 +383,8 @@ Partial Class FrmAsignacionConteo
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.DtgvAsigConteo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -263,4 +407,17 @@ Partial Class FrmAsignacionConteo
     Friend WithEvents Label1 As Label
     Friend WithEvents DtgvAsigConteo As DataGridView
     Friend WithEvents BtnAsignar As Button
+    Friend WithEvents lblMaster As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents CmbInvenUP As ComboBox
+    Friend WithEvents CmbConteoUp As ComboBox
+    Friend WithEvents FechaAsigUP As DateTimePicker
+    Friend WithEvents BtnEliminar As Button
+    Friend WithEvents BtnActualizar As Button
+    Friend WithEvents CmbZonaUp As ComboBox
+    Friend WithEvents CmbEqUpd As ComboBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
 End Class

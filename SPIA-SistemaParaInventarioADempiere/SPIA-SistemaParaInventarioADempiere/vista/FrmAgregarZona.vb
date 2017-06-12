@@ -41,4 +41,8 @@ Public Class FrmAgregarZona
         Catch ex As Exception
         End Try
     End Sub
+
+    Private Sub BtnUbc_Click(sender As Object, e As EventArgs) Handles BtnUbc.Click
+        TabZona.SelectedIndex = 1
+    End Sub
 End Class

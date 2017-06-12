@@ -36,10 +36,20 @@ Partial Class FrmInventario
         Me.DtvgInventario = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.BtnEliminar = New System.Windows.Forms.Button()
+        Me.BtnActualizar = New System.Windows.Forms.Button()
+        Me.DtFinUp = New System.Windows.Forms.DateTimePicker()
+        Me.DtInicioUP = New System.Windows.Forms.DateTimePicker()
+        Me.TxtNomInventarioUP = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lbl = New System.Windows.Forms.Label()
         Me.TabInventario.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DtvgInventario, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabInventario
@@ -74,7 +84,7 @@ Partial Class FrmInventario
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(295, 240)
+        Me.BtnCancelar.Location = New System.Drawing.Point(331, 229)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.BtnCancelar.TabIndex = 7
@@ -83,7 +93,7 @@ Partial Class FrmInventario
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(159, 240)
+        Me.BtnGuardar.Location = New System.Drawing.Point(195, 229)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.BtnGuardar.TabIndex = 6
@@ -92,21 +102,21 @@ Partial Class FrmInventario
         '
         'FechaFinInventario
         '
-        Me.FechaFinInventario.Location = New System.Drawing.Point(159, 171)
+        Me.FechaFinInventario.Location = New System.Drawing.Point(195, 160)
         Me.FechaFinInventario.Name = "FechaFinInventario"
         Me.FechaFinInventario.Size = New System.Drawing.Size(211, 20)
         Me.FechaFinInventario.TabIndex = 5
         '
         'FechaInicioInventario
         '
-        Me.FechaInicioInventario.Location = New System.Drawing.Point(159, 122)
+        Me.FechaInicioInventario.Location = New System.Drawing.Point(195, 111)
         Me.FechaInicioInventario.Name = "FechaInicioInventario"
         Me.FechaInicioInventario.Size = New System.Drawing.Size(211, 20)
         Me.FechaInicioInventario.TabIndex = 4
         '
         'TxtNombreInventario
         '
-        Me.TxtNombreInventario.Location = New System.Drawing.Point(159, 65)
+        Me.TxtNombreInventario.Location = New System.Drawing.Point(195, 54)
         Me.TxtNombreInventario.Name = "TxtNombreInventario"
         Me.TxtNombreInventario.Size = New System.Drawing.Size(211, 20)
         Me.TxtNombreInventario.TabIndex = 3
@@ -114,7 +124,7 @@ Partial Class FrmInventario
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(34, 171)
+        Me.Label3.Location = New System.Drawing.Point(70, 160)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 13)
         Me.Label3.TabIndex = 2
@@ -123,7 +133,7 @@ Partial Class FrmInventario
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(34, 122)
+        Me.Label2.Location = New System.Drawing.Point(70, 111)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(96, 13)
         Me.Label2.TabIndex = 1
@@ -132,7 +142,7 @@ Partial Class FrmInventario
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(34, 72)
+        Me.Label1.Location = New System.Drawing.Point(70, 61)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(108, 13)
         Me.Label1.TabIndex = 0
@@ -172,12 +182,96 @@ Partial Class FrmInventario
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.lbl)
+        Me.TabPage3.Controls.Add(Me.BtnEliminar)
+        Me.TabPage3.Controls.Add(Me.BtnActualizar)
+        Me.TabPage3.Controls.Add(Me.DtFinUp)
+        Me.TabPage3.Controls.Add(Me.DtInicioUP)
+        Me.TabPage3.Controls.Add(Me.TxtNomInventarioUP)
+        Me.TabPage3.Controls.Add(Me.Label4)
+        Me.TabPage3.Controls.Add(Me.Label5)
+        Me.TabPage3.Controls.Add(Me.Label6)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(489, 302)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Seleccion"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'BtnEliminar
+        '
+        Me.BtnEliminar.Location = New System.Drawing.Point(333, 227)
+        Me.BtnEliminar.Name = "BtnEliminar"
+        Me.BtnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnEliminar.TabIndex = 15
+        Me.BtnEliminar.Text = "Eliminar"
+        Me.BtnEliminar.UseVisualStyleBackColor = True
+        '
+        'BtnActualizar
+        '
+        Me.BtnActualizar.Location = New System.Drawing.Point(197, 227)
+        Me.BtnActualizar.Name = "BtnActualizar"
+        Me.BtnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnActualizar.TabIndex = 14
+        Me.BtnActualizar.Text = "Actualizar"
+        Me.BtnActualizar.UseVisualStyleBackColor = True
+        '
+        'DtFinUp
+        '
+        Me.DtFinUp.Location = New System.Drawing.Point(197, 158)
+        Me.DtFinUp.Name = "DtFinUp"
+        Me.DtFinUp.Size = New System.Drawing.Size(211, 20)
+        Me.DtFinUp.TabIndex = 13
+        '
+        'DtInicioUP
+        '
+        Me.DtInicioUP.Location = New System.Drawing.Point(197, 109)
+        Me.DtInicioUP.Name = "DtInicioUP"
+        Me.DtInicioUP.Size = New System.Drawing.Size(211, 20)
+        Me.DtInicioUP.TabIndex = 12
+        '
+        'TxtNomInventarioUP
+        '
+        Me.TxtNomInventarioUP.Location = New System.Drawing.Point(197, 52)
+        Me.TxtNomInventarioUP.Name = "TxtNomInventarioUP"
+        Me.TxtNomInventarioUP.Size = New System.Drawing.Size(211, 20)
+        Me.TxtNomInventarioUP.TabIndex = 11
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(72, 158)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(85, 13)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Fin de inventario"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(72, 109)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(96, 13)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Inicio de inventario"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(72, 59)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(108, 13)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Nombre de inventario"
+        '
+        'lbl
+        '
+        Me.lbl.AutoSize = True
+        Me.lbl.Location = New System.Drawing.Point(75, 236)
+        Me.lbl.Name = "lbl"
+        Me.lbl.Size = New System.Drawing.Size(39, 13)
+        Me.lbl.TabIndex = 16
+        Me.lbl.Text = "Label7"
         '
         'FrmInventario
         '
@@ -194,6 +288,8 @@ Partial Class FrmInventario
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.DtvgInventario, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -212,4 +308,13 @@ Partial Class FrmInventario
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents DtvgInventario As DataGridView
+    Friend WithEvents BtnEliminar As Button
+    Friend WithEvents BtnActualizar As Button
+    Friend WithEvents DtFinUp As DateTimePicker
+    Friend WithEvents DtInicioUP As DateTimePicker
+    Friend WithEvents TxtNomInventarioUP As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents lbl As Label
 End Class

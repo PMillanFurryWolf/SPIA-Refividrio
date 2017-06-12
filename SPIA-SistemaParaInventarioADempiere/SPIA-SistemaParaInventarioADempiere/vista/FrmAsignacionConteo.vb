@@ -2,10 +2,10 @@
 Public Class FrmAsignacionConteo
     Dim objConex As New ConexionDB
     Dim objConsulta As New ConsultasDataView
+    Dim objGuarda As New GuardadoDB
     Public Sub New()
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        LlenarCombos()
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
@@ -56,6 +56,7 @@ Public Class FrmAsignacionConteo
         lector = comando.ExecuteReader()
         While lector.Read
             CmbEquipo.Items.Add(lector("nombreequipo"))
+            CmbEqUpd.Items.Add(lector("nombreequipo"))
         End While
         objConex.CerrarConexion()
     End Sub
@@ -83,16 +84,28 @@ Public Class FrmAsignacionConteo
         If CmbConteo.SelectedIndex + 1 = 0 Or CmbEquipo.SelectedIndex + 1 = 0 Or CmbZona.SelectedIndex + 1 = 0 Or CmbInventario.SelectedIndex + 1 = 0 Then
             MsgBox("Favor de elegir la información de las listas", vbExclamation, "Atención")
         Else
-
-            Dim objg As New GuardadoDB
+            VaciarCombos()
+            Dim objvalida As New ValidarEquiposZonas
             Dim fechaAsig As DateTime = DtInicio.Value
             Dim ff As String = fechaAsig.Year.ToString & "/" & fechaAsig.Month.ToString & "/" & fechaAsig.Day.ToString & " " & fechaAsig.Hour.ToString & ":" & fechaAsig.Minute.ToString & ":" & fechaAsig.Second.ToString
-            objg.GuardarAsigConteo(RetornoEquipo(), RetornoZona(), RetornoConteo, RetornoInventario(), ff)
 
-            DtgvAsigConteo.Refresh()
-            objConsulta.ConsultarAsignacion()
-            TabAsignacion.SelectedIndex = 1
+            If objvalida.ExisteEquipoEnZona(RetornoEquipo(), RetornoZona(), RetornoConteo()) = True Then
+                MsgBox("Este equipo ya está asignado a esta zona en este conteo, elegir un equipo diferente", vbExclamation, "Atención")
+            Else
+                objGuarda.GuardarAsigConteo(RetornoEquipo(), RetornoZona(), RetornoConteo(), RetornoInventario(), ff)
+                DtgvAsigConteo.Refresh()
+                objConsulta.ConsultarAsignacion()
+                TabAsignacion.SelectedIndex = 1
+            End If
+
         End If
+    End Sub
+
+    Private Sub VaciarCombos()
+        CmbEquipo.Items.Clear()
+        CmbConteo.Items.Clear()
+        CmbZona.Items.Clear()
+        CmbInventario.Items.Clear()
     End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
@@ -100,6 +113,7 @@ Public Class FrmAsignacionConteo
     End Sub
 
     Private Sub BtnAsignar_Click(sender As Object, e As EventArgs) Handles BtnAsignar.Click
+        LlenarCombos()
         TabAsignacion.SelectedIndex = 0
     End Sub
 
@@ -155,4 +169,17 @@ Public Class FrmAsignacionConteo
         End If
         Return idInventario
     End Function
+    Private Sub DtgvAsigConteo_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DtgvAsigConteo.CellDoubleClick
+        Try
+            Dim fila = e.RowIndex
+            Dim colmum = e.ColumnIndex
+            TabAsignacion.SelectedIndex = 2
+            CmbEqUpd.Items.Clear()
+            ConsultarEquipos()
+            CmbEqUpd.Items.Remove(DtgvAsigConteo.Rows(fila).Cells(colmum).Value.ToString)
+            CmbEqUpd.Items.Add("XXX" & DtgvAsigConteo.Rows(fila).Cells(colmum).Value.ToString)
+
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

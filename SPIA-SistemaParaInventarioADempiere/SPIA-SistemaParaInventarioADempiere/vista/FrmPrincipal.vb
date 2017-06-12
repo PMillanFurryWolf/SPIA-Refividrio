@@ -47,6 +47,7 @@
 
     Private Sub picZonas_Click(sender As Object, e As EventArgs) Handles picZonas.Click
         obj.ConsultarZonas()
+        obj.ConsultarAlmacen()
         FrmConsultarZonas.Show()
     End Sub
 
